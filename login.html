@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sayaji Hairstyle Saloon - Login</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(
+                135deg,
+                #111111,
+                #3b2b1f,
+                #8b5e34
+            );
+        }
+
+
+        /* ================= LOGIN CONTAINER ================= */
+
+        .login-container {
+            width: 850px;
+            max-width: 95%;
+
+            display: flex;
+
+            background: white;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+
+        /* ================= LEFT SECTION ================= */
+
+        .left-section {
+            width: 45%;
+
+            padding: 50px 35px;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            color: white;
+
+            background: linear-gradient(
+                135deg,
+                #1c1c1c,
+                #8b5e34
+            );
+        }
+
+
+        .saloon-icon {
+            font-size: 65px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .left-section h1 {
+            font-size: 40px;
+
+            color: #ffd369;
+
+            margin-bottom: 10px;
+        }
+
+
+        .left-section h2 {
+            font-size: 24px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .left-section p {
+            color: #eeeeee;
+
+            line-height: 1.7;
+
+            font-size: 15px;
+        }
+
+
+        /* ================= RIGHT SECTION ================= */
+
+        .right-section {
+            width: 55%;
+
+            padding: 50px 45px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+        .right-section h2 {
+            text-align: center;
+
+            font-size: 30px;
+
+            color: #333;
+
+            margin-bottom: 8px;
+        }
+
+
+        .subtitle {
+            text-align: center;
+
+            color: #777;
+
+            margin-bottom: 30px;
+
+            font-size: 14px;
+        }
+
+
+        /* ================= FORM ================= */
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: bold;
+
+            color: #444;
+        }
+
+
+        .form-group input {
+            width: 100%;
+
+            padding: 13px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 8px;
+
+            outline: none;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+        }
+
+
+        .form-group input:focus {
+            border-color: #b07a3f;
+
+            box-shadow:
+                0 0 6px rgba(176, 122, 63, 0.4);
+        }
+
+
+        /* ================= OPTIONS ================= */
+
+        .options {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 25px;
+
+            font-size: 13px;
+        }
+
+
+        .remember {
+            color: #666;
+        }
+
+
+        .remember input {
+            margin-right: 5px;
+        }
+
+
+        .forgot-password {
+            color: #9a642d;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ================= LOGIN BUTTON ================= */
+
+        .login-btn {
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: linear-gradient(
+                135deg,
+                #b07a3f,
+                #6f431f
+            );
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 6px 15px rgba(111, 67, 31, 0.3);
+        }
+
+
+        /* ================= REGISTER ================= */
+
+        .register-text {
+            text-align: center;
+
+            margin-top: 22px;
+
+            color: #777;
+
+            font-size: 14px;
+        }
+
+
+        .register-text a {
+            color: #9a642d;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+
+        .register-text a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ================= BACK HOME ================= */
+
+        .back-home {
+            text-align: center;
+
+            margin-top: 18px;
+        }
+
+
+        .back-home a {
+            color: #555;
+
+            text-decoration: none;
+
+            font-size: 13px;
+        }
+
+
+        .back-home a:hover {
+            color: #b07a3f;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            .login-container {
+                flex-direction: column;
+            }
+
+
+            .left-section,
+            .right-section {
+                width: 100%;
+            }
+
+
+            .left-section {
+                padding: 35px 25px;
+            }
+
+
+            .right-section {
+                padding: 35px 25px;
+            }
+
+
+            .left-section h1 {
+                font-size: 32px;
+            }
+
+
+            .left-section h2 {
+                font-size: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= MAIN CONTAINER ================= -->
+
+    <div class="login-container">
+
+
+        <!-- ================= LEFT SIDE ================= -->
+
+        <div class="left-section">
+
+            <div class="saloon-icon">
+                ✂️
+            </div>
+
+            <h1>Sayaji</h1>
+
+            <h2> Unisex Hairstyle Saloon</h2>
+
+            <p>
+                Welcome back!
+
+                <br><br>
+
+                Login to your account and
+                manage your appointments
+                with Sayaji  Unisex Hairstyle Saloon.
+            </p>
+
+        </div>
+
+
+        <!-- ================= RIGHT SIDE ================= -->
+
+        <div class="right-section">
+
+            <h2>Welcome Back</h2>
+
+            <p class="subtitle">
+                Login to your Sayaji Unisex Saloon account
+            </p>
+
+
+            <!-- LOGIN FORM -->
+
+            <form>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- OPTIONS -->
+
+                <div class="options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                        >
+
+                        Remember me
+
+                    </label>
+
+
+                    <a
+                        href="#"
+                        class="forgot-password"
+                    >
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                >
+                    Login
+                </button>
+
+
+                <!-- REGISTER LINK -->
+
+                <p class="register-text">
+
+                    Don't have an account?
+
+                    <a href="registration.html">
+                        Register Now
+                    </a>
+
+                </p>
+
+
+                <!-- HOME LINK -->
+
+                <div class="back-home">
+
+                    <a href="index.html">
+                        ← Back to Home
+                    </a>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
