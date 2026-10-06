@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayaji Hairstyle Saloon - Registration</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #111111, #3b2b1f);
+        }
+
+        .container {
+            width: 900px;
+            max-width: 95%;
+            display: flex;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Left Section */
+        .left-section {
+            width: 45%;
+            background: linear-gradient(135deg, #1c1c1c, #8b5e34);
+            color: white;
+            padding: 50px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .left-section h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+            color: #ffd369;
+        }
+
+        .left-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .left-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #f5f5f5;
+        }
+
+        .icon {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        /* Right Section */
+        .right-section {
+            width: 55%;
+            padding: 40px;
+        }
+
+        .right-section h2 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #b07a3f;
+            box-shadow: 0 0 5px rgba(176, 122, 63, 0.4);
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .row .form-group {
+            width: 50%;
+        }
+
+        .terms {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 18px;
+        }
+
+        .terms input {
+            margin-right: 5px;
+        }
+
+        .register-btn {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #b07a3f, #6f431f);
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .register-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(111, 67, 31, 0.3);
+        }
+
+        .login-text {
+            text-align: center;
+            margin-top: 18px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .login-text a {
+            color: #9a642d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 700px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left-section,
+            .right-section {
+                width: 100%;
+            }
+
+            .left-section {
+                padding: 30px 20px;
+            }
+
+            .right-section {
+                padding: 30px 25px;
+            }
+
+            .row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .row .form-group {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Left Side -->
+        <div class="left-section">
+            <div class="icon">✂️</div>
+
+            <h1>Sayaji</h1>
+            <h2> Unisex Hairstyle Saloon</h2>
+
+            <p>
+                Look good. Feel great.<br>
+                Register with us and book your
+                next hairstyle appointment easily.
+            </p>
+        </div>
+
+        <!-- Right Side -->
+        <div class="right-section">
+
+            <h2>Create Account</h2>
+            <p class="subtitle">Register for your salon appointment</p>
+
+            <form>
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="row">
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="Enter email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" placeholder="Enter phone number" required>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Select Hairstyle</label>
+                    <select required>
+                        <option value="">-- Choose Hairstyle --</option>
+                        <option>Classic Haircut</option>
+                        <option>Modern Haircut</option>
+                        <option>Fade Cut</option>
+                        <option>Beard Styling</option>
+                        <option>Hair Spa</option>
+                        <option>Hair Coloring</option>
+                    </select>
+                </div>
+
+                <div class="row">
+
+                    <div class="form-group">
+                        <label>Appointment Date</label>
+                        <input type="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Appointment Time</label>
+                        <input type="time" required>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Create password" required>
+                </div>
+
+                <div class="terms">
+                    <label>
+                        <input type="checkbox" required>
+                        I agree to the terms and conditions.
+                    </label>
+                </div>
+
+                <button type="submit" class="register-btn">
+                    Register Now
+                </button>
+
+                <p class="login-text">
+                    Already have an account?
+                    <a href="login.html">Login</a>
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
