@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sayaji Hairstyle Saloon - Feedback</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+
+        /* ================= BODY ================= */
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px;
+
+            background: linear-gradient(
+                135deg,
+                #111111,
+                #3b2b1f,
+                #8b5e34
+            );
+        }
+
+
+        /* ================= MAIN CONTAINER ================= */
+
+        .feedback-container {
+
+            width: 900px;
+
+            max-width: 95%;
+
+            display: flex;
+
+            background: white;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+
+        /* ================= LEFT SECTION ================= */
+
+        .left-section {
+
+            width: 40%;
+
+            padding: 50px 35px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            color: white;
+
+            background: linear-gradient(
+                135deg,
+                #1c1c1c,
+                #8b5e34
+            );
+        }
+
+
+        .icon {
+
+            font-size: 65px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .left-section h1 {
+
+            font-size: 38px;
+
+            color: #ffd369;
+
+            margin-bottom: 8px;
+        }
+
+
+        .left-section h2 {
+
+            font-size: 23px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .left-section p {
+
+            color: #eeeeee;
+
+            line-height: 1.7;
+
+            font-size: 15px;
+        }
+
+
+        /* ================= RIGHT SECTION ================= */
+
+        .right-section {
+
+            width: 60%;
+
+            padding: 40px 45px;
+        }
+
+
+        .right-section h2 {
+
+            text-align: center;
+
+            font-size: 30px;
+
+            color: #333;
+
+            margin-bottom: 8px;
+        }
+
+
+        .subtitle {
+
+            text-align: center;
+
+            color: #777;
+
+            margin-bottom: 25px;
+
+            font-size: 14px;
+        }
+
+
+        /* ================= FORM ================= */
+
+        .form-group {
+
+            margin-bottom: 17px;
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: bold;
+
+            color: #444;
+        }
+
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 8px;
+
+            outline: none;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+        }
+
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+
+            border-color: #b07a3f;
+
+            box-shadow:
+                0 0 6px rgba(176, 122, 63, 0.4);
+        }
+
+
+        .form-group textarea {
+
+            height: 100px;
+
+            resize: none;
+        }
+
+
+        /* ================= RATING ================= */
+
+        .rating {
+
+            display: flex;
+
+            gap: 8px;
+
+            margin-top: 5px;
+        }
+
+
+        .rating input {
+
+            display: none;
+        }
+
+
+        .rating label {
+
+            font-size: 30px;
+
+            color: #ccc;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        .rating label:hover,
+        .rating label:hover ~ label {
+
+            color: #ffd369;
+        }
+
+
+        .rating input:checked + label {
+
+            color: #f4b400;
+        }
+
+
+        /* ================= BUTTON ================= */
+
+        .submit-btn {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: linear-gradient(
+                135deg,
+                #b07a3f,
+                #6f431f
+            );
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .submit-btn:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 6px 15px rgba(111, 67, 31, 0.3);
+        }
+
+
+        /* ================= BACK HOME ================= */
+
+        .back-home {
+
+            text-align: center;
+
+            margin-top: 18px;
+        }
+
+
+        .back-home a {
+
+            text-decoration: none;
+
+            color: #777;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+
+        .back-home a:hover {
+
+            color: #b07a3f;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            body {
+
+                padding: 20px;
+            }
+
+
+            .feedback-container {
+
+                flex-direction: column;
+            }
+
+
+            .left-section,
+            .right-section {
+
+                width: 100%;
+            }
+
+
+            .left-section {
+
+                padding: 35px 25px;
+            }
+
+
+            .right-section {
+
+                padding: 30px 25px;
+            }
+
+
+            .left-section h1 {
+
+                font-size: 32px;
+            }
+
+
+            .left-section h2 {
+
+                font-size: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= MAIN CONTAINER ================= -->
+
+    <div class="feedback-container">
+
+
+        <!-- ================= LEFT SECTION ================= -->
+
+        <div class="left-section">
+
+            <div class="icon">
+                💇
+            </div>
+
+            <h1>Sayaji </h1>
+
+            <h2> Unisex Hairstyle Saloon</h2>
+
+            <p>
+
+                Your opinion matters to us!
+
+                <br><br>
+
+                Tell us about your experience
+                and help us improve our services.
+
+                <br><br>
+
+                Thank you for visiting
+                Sayaji Unisex Hairstyle Saloon ❤️
+
+            </p>
+
+        </div>
+
+
+        <!-- ================= RIGHT SECTION ================= -->
+
+        <div class="right-section">
+
+
+            <h2>Give Your Feedback</h2>
+
+            <p class="subtitle">
+
+                We would love to hear from you
+
+            </p>
+
+
+            <!-- ================= FORM ================= -->
+
+            <form>
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- SERVICE -->
+
+                <div class="form-group">
+
+                    <label for="service">
+                        Service Used
+                    </label>
+
+                    <select id="service" required>
+
+                        <option value="">
+                            -- Select Service --
+                        </option>
+
+                        <option>
+                            Classic Haircut
+                        </option>
+
+                        <option>
+                            Modern Hairstyle
+                        </option>
+
+                        <option>
+                            Beard Styling
+                        </option>
+
+                        <option>
+                            Hair Spa
+                        </option>
+
+                        <option>
+                            Hair Coloring
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- RATING -->
+
+                <div class="form-group">
+
+                    <label>
+                        Rate Our Service
+                    </label>
+
+                    <div class="rating">
+
+                        <input
+                            type="radio"
+                            id="star5"
+                            name="rating"
+                            value="5"
+                            required
+                        >
+
+                        <label for="star5">
+                            ★
+                        </label>
+
+
+                        <input
+                            type="radio"
+                            id="star4"
+                            name="rating"
+                            value="4"
+                        >
+
+                        <label for="star4">
+                            ★
+                        </label>
+
+
+                        <input
+                            type="radio"
+                            id="star3"
+                            name="rating"
+                            value="3"
+                        >
+
+                        <label for="star3">
+                            ★
+                        </label>
+
+
+                        <input
+                            type="radio"
+                            id="star2"
+                            name="rating"
+                            value="2"
+                        >
+
+                        <label for="star2">
+                            ★
+                        </label>
+
+
+                        <input
+                            type="radio"
+                            id="star1"
+                            name="rating"
+                            value="1"
+                        >
+
+                        <label for="star1">
+                            ★
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Your Feedback
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Write your feedback here..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    Submit Feedback
+                </button>
+
+
+                <!-- BACK HOME -->
+
+                <div class="back-home">
+
+                    <a href="index.html">
+                        ← Back to Home
+                    </a>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
